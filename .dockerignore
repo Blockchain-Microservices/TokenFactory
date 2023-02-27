@@ -1,0 +1,11 @@
+.vscode
+dist
+node_modules
+.eslintrc.js
+.gitignore
+.prettierrc
+LICENSE
+*.md
+Dockerfile
+.dockerignore
+npm-debug.log
