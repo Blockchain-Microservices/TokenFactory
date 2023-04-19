@@ -1,0 +1,6 @@
+apiVersion: v2
+type: application
+version: 0.0.1
+name: token-factory
+appVersion: "1.0"
+description: "token-factory is service for minting erc-20 tokens in Ethereum blockchain"
