@@ -1,23 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: token-manager-deployment
+  name: token-factory-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: token-manager
+      app: token-factory
   template:
     metadata:
      labels:
-       app: token-manager
+       app: token-factory
     spec:
       containers:
-      - name: token-manager
-        image: token-manager
+      - name: token-factory
+        image: token-factory
         imagePullPolicy: Never
-        # envFrom:
-        # - configMapRef:
-        #     name: token-manager-env
         ports:
           - containerPort: 3000
