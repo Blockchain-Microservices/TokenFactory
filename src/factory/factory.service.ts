@@ -24,6 +24,6 @@ export class FactoryService {
   async deploy({ name, symbol, decimals, supply }: BodyReq): Promise<Response> {
     const tx = await this.contract.deployToken(name, symbol, decimals, supply);
 
-    return { hash: tx.hash };
+    return { txHash: tx.hash };
   }
 }

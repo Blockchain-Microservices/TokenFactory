@@ -3,3 +3,7 @@ export interface FactoryConfig {
   contractAddress: string;
   privateKey: string;
 }
+
+export interface TokenManagerConfig {
+  url: string;
+}

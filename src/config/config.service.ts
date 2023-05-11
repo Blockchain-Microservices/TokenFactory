@@ -1,7 +1,10 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { IsNotEmpty, IsString, validateSync } from 'class-validator';
 import { plainToClass } from 'class-transformer';
-import { FactoryConfig } from './interfaces/config.interfaces';
+import {
+  FactoryConfig,
+  TokenManagerConfig,
+} from './interfaces/config.interfaces';
 
 export class EnvironmentVariables {
   @IsString()
@@ -15,6 +18,10 @@ export class EnvironmentVariables {
   @IsString()
   @IsNotEmpty()
   PRIVATE_KEY: string;
+
+  @IsString()
+  @IsNotEmpty()
+  TOKEN_MANAGER_URL: string;
 }
 
 @Injectable()
@@ -28,6 +35,12 @@ export class ConfigService {
       provider: this.env.PROVIDER,
       contractAddress: this.env.CONTRACT_ADDRESS,
       privateKey: this.env.PRIVATE_KEY,
+    };
+  }
+
+  getTokenManagerConfig(): TokenManagerConfig {
+    return {
+      url: this.env.TOKEN_MANAGER_URL,
     };
   }
 

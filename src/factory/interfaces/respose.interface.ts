@@ -1,3 +1,3 @@
 export interface Response {
-  hash: string;
+  txHash: string;
 }
